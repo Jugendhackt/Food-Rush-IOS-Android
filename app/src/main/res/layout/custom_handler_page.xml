@@ -20,32 +20,33 @@
         layout="@layout/custom_handler_information"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginBottom="28dp"
         android:layout_marginTop="107dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2"></include>
+        app:layout_constraintTop_toBottomOf="@+id/include2"
+        app:layout_constraintVertical_bias="1.0"></include>
 
     <TextView
         android:id="@+id/Cash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="153dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
         android:text="TextView"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toStartOf="@+id/Wanted"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Wanted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
+        android:layout_width="121dp"
+        android:layout_height="44dp"
         android:layout_marginTop="44dp"
+        android:text="Wanted"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2" />
 
