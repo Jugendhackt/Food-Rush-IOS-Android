@@ -6,7 +6,7 @@ package com.example.calebseeling.foodcrush;
 
 public class generater_bar {
 
-    public String Name;
+    public static String Name;
     public String Wanted;
     public int payment;
 
@@ -17,7 +17,7 @@ public class generater_bar {
         this.payment = payment;
     }
 
-    public String getName() {
+    public static String getName() {
         return Name;
     }
 
