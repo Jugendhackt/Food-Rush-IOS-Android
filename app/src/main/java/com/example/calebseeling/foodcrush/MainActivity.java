@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity
 
     public generater_bar mGenerater_bar;
 
-    private ListView
+    private ListView listview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
