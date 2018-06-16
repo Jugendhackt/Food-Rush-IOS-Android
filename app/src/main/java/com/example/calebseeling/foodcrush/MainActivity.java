@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity
 
     public generater_bar mGenerater_bar;
     public static String TAG = "MainActivity";
+    private Button Button_Create;
 
     private ListView listview;
     private ArrayAdapter<String> adapter;
@@ -32,6 +34,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Button_Create = (Button) findViewById(R.id.Button_Create);
+        Button_Create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         setSupportActionBar(toolbar);
         ArrayList<String> arrayList = new ArrayList<String>();
         mGenerater_bar = new generater_bar("Adrian" , "Cola" , 1);
