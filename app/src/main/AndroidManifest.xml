@@ -36,8 +36,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCvuHHQfY7VcAcotkOSDp_QeptAbzh6kkQ"/>
 
-        <activity android:name=".Anzeige" />
-        <activity android:name=".Profil" />
+        <activity android:name=".Anzeige"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Profil"
+            android:screenOrientation="portrait"/>
         <activity android:name=".Cool"></activity>
     </application>
 
