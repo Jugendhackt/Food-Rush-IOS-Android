@@ -21,9 +21,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
+//import com.google.android.gms.maps.GoogleMap;
+//import com.google.android.gms.maps.MapFragment;
+//import com.google.android.gms.maps.OnMapReadyCallback;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
     public generater_bar mGenerater_bar;
     public static String TAG = "MainActivity";
     private Button Button_Create;
-private MapFragment mMapFragment;
+//private MapFragment mMapFragment;
     private ListView listview;
     private ArrayAdapter<generater_bar> adapter;
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
@@ -45,7 +45,7 @@ private MapFragment mMapFragment;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Button_Create = (Button) findViewById(R.id.Button_Create);
-        class Map implements OnMapReadyCallback {
+        /*class Map implements OnMapReadyCallback {
             MapFragment mapFragment = (MapFragment) getFragmentManager()
                     .findFragmentById(R.id.map);
 
@@ -54,7 +54,7 @@ private MapFragment mMapFragment;
                 mapFragment.getMapAsync( this);
             }
 
-        }
+        }*/
         Button_Create.setOnClickListener(new View.OnClickListener() {
                                              @Override
                                              public void onClick(View v) {
