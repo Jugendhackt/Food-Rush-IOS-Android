@@ -111,7 +111,14 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this , Anzeige.class);
             startActivity(intent);
         }
-        // Handle navigation view item clicks here.
+        if(item.getItemId()==R.id.nav_profil){
+            Intent intent = new Intent(this , Profil.class);
+            startActivity(intent);
+        }
+        if(item.getItemId()==R.id.nav_cool){
+            Intent intent = new Intent(this , Cool.class);
+            startActivity(intent);
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
