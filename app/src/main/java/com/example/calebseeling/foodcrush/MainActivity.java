@@ -1,6 +1,7 @@
 package com.example.calebseeling.foodcrush;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -24,19 +25,26 @@ import android.widget.ListView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     public generater_bar mGenerater_bar;
+    private GoogleMap mMap;
     public static String TAG = "MainActivity";
     private Button Button_Create;
-private MapFragment mMapFragment;
+
     private ListView listview;
     private ArrayAdapter<generater_bar> adapter;
+
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,35 +53,25 @@ private MapFragment mMapFragment;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Button_Create = (Button) findViewById(R.id.Button_Create);
-        class Map implements OnMapReadyCallback {
-            MapFragment mapFragment = (MapFragment) getFragmentManager()
-                    .findFragmentById(R.id.map);
 
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                mapFragment.getMapAsync( this);
-            }
 
-        }
+
         Button_Create.setOnClickListener(new View.OnClickListener() {
-                                             @Override
-                                             public void onClick(View v) {
-                                                 Intent intent = new Intent(MainActivity.this, custom_handler.class);
-                                                 startActivity(intent);
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, custom_handler.class);
+                startActivity(intent);
 
 
-
-
-
-                                             }
-                                         });
+            }
+        });
 
         setSupportActionBar(toolbar);
         ArrayList<generater_bar> arrayList = new ArrayList<>();
-        mGenerater_bar = new generater_bar("Adrian" , "Cola" , 2);
+        generater_bar bar_2 = new generater_bar("Adrian", "Cola", 2);
         listview = (ListView) findViewById(R.id.listview);
-        arrayList.add(mGenerater_bar);
-        generater_bar bar_1 = new generater_bar("Caleb" , "Cola" , 1);
+        arrayList.add(bar_2);
+        generater_bar bar_1 = new generater_bar("Caleb", "Cola", 1);
         arrayList.add(bar_1);
         adapter = new ArrayAdapter<generater_bar>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
         listview.setAdapter(adapter);
@@ -83,7 +81,8 @@ private MapFragment mMapFragment;
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 generater_bar name = (generater_bar) adapterView.getItemAtPosition(i);
                 Log.d(TAG, "onItemClick: You Clicked on ee" + name.getName() + i);
-            }});
+            }
+        });
         Log.d(TAG, "Gnerater" + mGenerater_bar.getName());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -140,16 +139,16 @@ private MapFragment mMapFragment;
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.nav_anzeige){
-            Intent intent = new Intent(this , Anzeige.class);
+        if (item.getItemId() == R.id.nav_anzeige) {
+            Intent intent = new Intent(this, Anzeige.class);
             startActivity(intent);
         }
-        if(item.getItemId()==R.id.nav_profil){
-            Intent intent = new Intent(this , Profil.class);
+        if (item.getItemId() == R.id.nav_profil) {
+            Intent intent = new Intent(this, Profil.class);
             startActivity(intent);
         }
-        if(item.getItemId()==R.id.nav_cool){
-            Intent intent = new Intent(this , Cool.class);
+        if (item.getItemId() == R.id.nav_cool) {
+            Intent intent = new Intent(this, Cool.class);
             startActivity(intent);
         }
 
@@ -158,4 +157,5 @@ private MapFragment mMapFragment;
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-}
+
+  }
