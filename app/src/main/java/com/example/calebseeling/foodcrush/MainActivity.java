@@ -1,5 +1,6 @@
 package com.example.calebseeling.foodcrush;
 
+import android.content.Intent;
 import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
@@ -116,7 +117,8 @@ private MapFragment mMapFragment;
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -125,7 +127,19 @@ private MapFragment mMapFragment;
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        if(item.getItemId()==R.id.nav_anzeige){
+            Intent intent = new Intent(this , Anzeige.class);
+            startActivity(intent);
+        }
+        if(item.getItemId()==R.id.nav_profil){
+            Intent intent = new Intent(this , Profil.class);
+            startActivity(intent);
+        }
+        if(item.getItemId()==R.id.nav_cool){
+            Intent intent = new Intent(this , Cool.class);
+            startActivity(intent);
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
