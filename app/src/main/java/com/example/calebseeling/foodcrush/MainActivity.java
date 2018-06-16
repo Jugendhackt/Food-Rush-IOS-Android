@@ -1,7 +1,10 @@
 package com.example.calebseeling.foodcrush;
 
 import android.content.Intent;
+import android.app.FragmentTransaction;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -19,23 +22,40 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+{
 
     public generater_bar mGenerater_bar;
     public static String TAG = "MainActivity";
     private Button Button_Create;
-
+private MapFragment mMapFragment;
     private ListView listview;
     private ArrayAdapter<String> adapter;
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Button_Create = (Button) findViewById(R.id.Button_Create);
+        class Map implements OnMapReadyCallback {
+            MapFragment mapFragment = (MapFragment) getFragmentManager()
+                    .findFragmentById(R.id.map);
+
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+                mapFragment.getMapAsync( this);
+            }
+
+        }
         Button_Create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
