@@ -107,9 +107,12 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.nav_anzeige){
+            Intent intent = new Intent(this , Anzeige.class);
+            startActivity(intent);
+        }
         // Handle navigation view item clicks here.
-        Intent intent = new Intent(this , Anzeige.class);
-        startActivity(intent);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
