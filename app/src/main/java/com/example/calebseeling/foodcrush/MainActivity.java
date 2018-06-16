@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
 
-        item.setChecked(false);
+        item.setCheckable(false);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
