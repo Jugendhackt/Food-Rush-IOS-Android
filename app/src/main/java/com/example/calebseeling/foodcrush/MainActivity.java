@@ -1,7 +1,6 @@
 package com.example.calebseeling.foodcrush;
 
 import android.content.Intent;
-import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -17,7 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity
     private Button Button_Create;
 private MapFragment mMapFragment;
     private ListView listview;
-    private ArrayAdapter<String> adapter;
+    private ArrayAdapter<generater_bar> adapter;
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,21 +56,35 @@ private MapFragment mMapFragment;
 
         }
         Button_Create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                                             @Override
+                                             public void onClick(View v) {
+                                                 Intent intent = new Intent(MainActivity.this, custom_handler.class);
+                                                 startActivity(intent);
 
-            }
-        });
+
+
+
+
+                                             }
+                                         });
+
         setSupportActionBar(toolbar);
-        ArrayList<String> arrayList = new ArrayList<String>();
-        mGenerater_bar = new generater_bar("Adrian" , "Cola" , 1);
+        ArrayList<generater_bar> arrayList = new ArrayList<>();
+        mGenerater_bar = new generater_bar("Adrian" , "Cola" , 2);
         listview = (ListView) findViewById(R.id.listview);
-        arrayList.add(generater_bar.getName());
-        mGenerater_bar = new generater_bar("Caleb" , "Cola" , 1);
-        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
+        arrayList.add(mGenerater_bar);
+        generater_bar bar_1 = new generater_bar("Caleb" , "Cola" , 1);
+        arrayList.add(bar_1);
+        adapter = new ArrayAdapter<generater_bar>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
         listview.setAdapter(adapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                generater_bar name = (generater_bar) adapterView.getItemAtPosition(i);
+                Log.d(TAG, "onItemClick: You Clicked on ee" + name.getName() + i);
+            }});
         Log.d(TAG, "Gnerater" + mGenerater_bar.getName());
-        arrayList.add(generater_bar.getName());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
