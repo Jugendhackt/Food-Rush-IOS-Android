@@ -8,7 +8,6 @@
     tools:context="com.example.calebseeling.foodcrush.MainActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/app_bar_main">
-ssss
 
     <TextView
         android:id="@+id/textView2"
@@ -25,7 +24,7 @@ ssss
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:background="@mipmap/screen_shot_2018_06_16_at_07_49_42"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
