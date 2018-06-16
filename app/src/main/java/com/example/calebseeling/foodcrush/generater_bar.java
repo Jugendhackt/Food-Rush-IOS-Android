@@ -6,9 +6,9 @@ package com.example.calebseeling.foodcrush;
 
 public class generater_bar {
 
-    public static String Name;
-    public String Wanted;
-    public int payment;
+    public  static String Name;
+    public static String Wanted;
+    public static int payment;
 
 
     public generater_bar(String name, String wanted, int payment) {
@@ -25,7 +25,7 @@ public class generater_bar {
         Name = name;
     }
 
-    public String getWanted() {
+    public static String getWanted() {
         return Wanted;
     }
 
@@ -33,7 +33,7 @@ public class generater_bar {
         Wanted = wanted;
     }
 
-    public int getPayment() {
+    public static int getPayment() {
         return payment;
     }
 
