@@ -1,5 +1,6 @@
 package com.example.calebseeling.foodcrush;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -24,9 +25,15 @@ public class custom_handler extends AppCompatActivity implements OnMapReadyCallb
     private TextView Info;
     private TextView Wanted;
     private TextView Cash;
-    private static final LatLng PERTH = new LatLng(-31.952854, 115.857342);
+    private static final LatLng Erichweinert = new LatLng(52.5480293, 13.42803809999998);
+    private static final LatLng Dunckerstraße4 = new LatLng(52.54103, 13.420150000000035);
+    private static final LatLng Alexanderplatz = new LatLng(52.5219184, 13.413214700000026);
+    private static final LatLng Hufelandstraße100 = new LatLng(52.5296989, 13.437045200000057);
     private Button Button_Create;
-    private Marker mPerth;
+    private Marker mErichweinert;
+    private Marker mDunckerstraße4;
+    private Marker mAlexanderplatz;
+    private Marker mHufelandstraße100;
     private MapFragment mMapFragment;
     private GoogleMap mMap;
 
@@ -42,6 +49,9 @@ public class custom_handler extends AppCompatActivity implements OnMapReadyCallb
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync((OnMapReadyCallback) this);
+
+        Intent intent = getIntent();
+        String name = intent.getCharExtra() ;
 
         Cash.setText(Payment + "");
         Wanted.setText(generater_bar.getWanted());
@@ -67,8 +77,17 @@ public class custom_handler extends AppCompatActivity implements OnMapReadyCallb
         mMap = map;
 
         // Add some markers to the map, and add a data object to each marker.
-        mPerth = mMap.addMarker(new MarkerOptions()
-                .position(PERTH)
+        mHufelandstraße100 = mMap.addMarker(new MarkerOptions()
+                .position(Hufelandstraße100)
+                .title("Perth"));
+        mErichweinert = mMap.addMarker(new MarkerOptions()
+                .position(Erichweinert)
+                .title("Perth"));
+        mAlexanderplatz = mMap.addMarker(new MarkerOptions()
+                .position(Alexanderplatz)
+                .title("Perth"));
+        mDunckerstraße4 = mMap.addMarker(new MarkerOptions()
+                .position(Dunckerstraße4)
                 .title("Perth"));
 
 

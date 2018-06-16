@@ -25,6 +25,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
@@ -48,7 +49,6 @@ public class MainActivity extends AppCompatActivity
         Button_Create = (Button) findViewById(R.id.Button_Create);
 
 
-
         Button_Create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,11 +61,9 @@ public class MainActivity extends AppCompatActivity
 
         setSupportActionBar(toolbar);
         ArrayList<generater_bar> arrayList = new ArrayList<>();
-        generater_bar bar_2 = new generater_bar("Adrian", "Cola", 2);
+  final generater_bar generater = new generater_bar("Adrian" , "COla" , 5 , "13.42803809999998", "52.5480293");
         listview = (ListView) findViewById(R.id.listview);
-        arrayList.add(bar_2);
-        generater_bar bar_1 = new generater_bar("Caleb", "Cola", 1);
-        arrayList.add(bar_1);
+
         adapter = new ArrayAdapter<generater_bar>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
         listview.setAdapter(adapter);
 
@@ -73,7 +71,18 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 generater_bar name = (generater_bar) adapterView.getItemAtPosition(i);
+                String wanted = (String) generater.getWanted();
+                int payment = (int) generater.getPayment();
+                String longitude = (String) generater.getLongitude();
+                String latitude = (String) generater.getLatitude();
                 Log.d(TAG, "onItemClick: You Clicked on ee" + name.getName() + i);
+                Intent intent = new Intent(MainActivity.this , custom_handler.class);
+                intent.putExtra("name" , name.getName());
+                intent.putExtra("wanted" , wanted);
+                intent.putExtra("payment" , payment);
+                intent.putExtra("longitude" , longitude);
+                intent.putExtra("latitude" , latitude);
+                startActivity(intent);
             }
         });
         Log.d(TAG, "Gnerater" + mGenerater_bar.getName());

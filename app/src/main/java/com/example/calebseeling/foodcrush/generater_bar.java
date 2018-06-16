@@ -9,9 +9,26 @@ public class generater_bar {
     public  static String Name;
     public static String Wanted;
     public static int payment;
+    public static String latitude;
+    public static String longitude;
 
+    public static String getLatitude() {
+        return latitude;
+    }
 
-    public generater_bar(String name, String wanted, int payment) {
+    public static void setLatitude(String latitude) {
+        generater_bar.latitude = latitude;
+    }
+
+    public static String getLongitude() {
+        return longitude;
+    }
+
+    public static void setLongitude(String longitude) {
+        generater_bar.longitude = longitude;
+    }
+
+    public generater_bar(String name, String wanted, int payment , String longitude , String latitude) {
         Name = name;
         Wanted = wanted;
         this.payment = payment;
