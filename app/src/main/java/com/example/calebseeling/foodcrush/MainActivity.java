@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
 
-
+        item.setChecked(false);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
