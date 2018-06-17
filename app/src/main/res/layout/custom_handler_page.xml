@@ -33,21 +33,22 @@
         android:layout_width="153dp"
         android:layout_height="50dp"
         android:layout_marginTop="130dp"
-        android:text="TextView"
+        android:text="5$"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/include2"
         app:layout_constraintEnd_toStartOf="@+id/Wanted"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.488" />
 
     <TextView
         android:id="@+id/Wanted"
         android:layout_width="121dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginBottom="124dp"
         android:layout_marginStart="263dp"
-        android:text="Wanted"
+        android:text="CocaCola"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"

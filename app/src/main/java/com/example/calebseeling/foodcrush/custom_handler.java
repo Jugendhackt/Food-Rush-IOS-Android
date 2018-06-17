@@ -36,6 +36,7 @@ public class custom_handler extends AppCompatActivity implements OnMapReadyCallb
     private Marker mHufelandstraße100;
     private MapFragment mMapFragment;
     private GoogleMap mMap;
+    private TextView Alex;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class custom_handler extends AppCompatActivity implements OnMapReadyCallb
         Intent intent = getIntent();
 
 
-        Cash.setText(Payment + "");
+        Cash.setText(Payment + "$");
         Wanted.setText(generater_bar.getWanted());
 
 
@@ -76,19 +77,10 @@ public class custom_handler extends AppCompatActivity implements OnMapReadyCallb
     public void onMapReady(GoogleMap map) {
         mMap = map;
 
-        // Add some markers to the map, and add a data object to each marker.
-        mHufelandstraße100 = mMap.addMarker(new MarkerOptions()
-                .position(Hufelandstraße100)
-                .title("Perth"));
-        mErichweinert = mMap.addMarker(new MarkerOptions()
-                .position(Erichweinert)
-                .title("Perth"));
         mAlexanderplatz = mMap.addMarker(new MarkerOptions()
                 .position(Alexanderplatz)
                 .title("Perth"));
-        mDunckerstraße4 = mMap.addMarker(new MarkerOptions()
-                .position(Dunckerstraße4)
-                .title("Perth"));
+
 
 
     }
