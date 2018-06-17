@@ -51,7 +51,7 @@ public class custom_handler extends AppCompatActivity implements OnMapReadyCallb
         mapFragment.getMapAsync((OnMapReadyCallback) this);
 
         Intent intent = getIntent();
-        String name = intent.getCharExtra() ;
+
 
         Cash.setText(Payment + "");
         Wanted.setText(generater_bar.getWanted());
