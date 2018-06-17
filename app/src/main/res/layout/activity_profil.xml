@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.042"
-        app:srcCompat="@android:color/darker_gray" />
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
         android:id="@+id/Name"
@@ -26,6 +26,7 @@
         android:layout_marginEnd="96dp"
         android:layout_marginStart="96dp"
         android:text="Caleb Seeling"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
