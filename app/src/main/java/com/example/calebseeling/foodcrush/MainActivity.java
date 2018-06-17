@@ -46,23 +46,23 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        Button_Create = (Button) findViewById(R.id.Button_Create);
+     //   Button_Create = (Button) findViewById(R.id.Button_Create);
 
 
-        Button_Create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, custom_handler.class);
-                startActivity(intent);
+      // Button_Create.setOnClickListener(new View.OnClickListener() {
+      //     @Override
+      //     public void onClick(View v) {
+      //         Intent intent = new Intent(MainActivity.this, custom_handler.class);
+      //         startActivity(intent);
 
 
-            }
-        });
+      //     }
+      // });
 
         setSupportActionBar(toolbar);
         ArrayList<generater_bar> arrayList = new ArrayList<>();
   final generater_bar generater = new generater_bar("Adrian" , "COla" , 5 , "13.42803809999998", "52.5480293");
-        listview = (ListView) findViewById(R.id.listview);
+      //  listview = (ListView) findViewById(R.id.listview);
 
         adapter = new ArrayAdapter<generater_bar>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
         listview.setAdapter(adapter);
